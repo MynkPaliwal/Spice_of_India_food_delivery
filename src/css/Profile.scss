@@ -1,0 +1,121 @@
+.profile {
+    display: flex;
+    height: 90vh;
+    background: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+    align-items: center;
+    justify-content: center;
+}
+
+.profileCard {
+    display: flex;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    padding: 40px;
+    min-width: 350px;
+    max-width: 400px;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profileCard .userIcon {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.profileCard img {
+    margin-bottom: 24px;
+    color: #333;
+    font-weight: 700;
+}
+
+.profileCard div {
+    width: 100%;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profileCard button {
+    margin-top: 10px;
+    width: 100%;
+    background: linear-gradient(90deg, #fda085 0%, #f6d365 100%);
+    color: #fff;
+    font-weight: 600px;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 0px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.profileInfoText {
+    font-size: 18px;
+    color: #444;
+}
+
+.profileCard div span {
+    font-size: 18px;
+    color: #444;
+}
+
+.profileCard div svg:nth-of-type(2) {
+    color: #f6d365;
+}
+
+.profileCard div svg:nth-of-type(1),
+.profileCard div svg:nth-of-type(3) {
+    color: #fda085;
+}
+
+@media (max-width: 600px) {
+  .profile {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 4vw 4vw;
+    height: auto;
+    min-height: 100vh;
+    justify-content: flex-start;
+  }
+  .profileCard {
+    width: 92vw;
+    padding: 14px 8px 18px 8px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.10);
+    margin-top: 24px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .profileCard .userIcon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 12px;
+  }
+  .profileCard h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .profileCard div {
+    font-size: 14px;
+    margin-bottom: 8px;
+    gap: 6px;
+  }
+  .profileCard button {
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 6px;
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+

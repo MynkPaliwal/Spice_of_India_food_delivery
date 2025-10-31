@@ -1,0 +1,681 @@
+// Home Page Styles - StackFood Inspired Design
+.homePage {
+  width: 100%;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch; // Smooth scrolling on iOS
+  scroll-behavior: smooth;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  
+  // Ensure content is visible and not hidden
+  @media (min-width: 769px) {
+    margin-left: 0; // Main content wrapper handles sidebar spacing
+    width: 100%; // Full width within main-content
+  }
+  
+  @media (max-width: 768px) {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+// Hero Section
+.heroSection {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 20px 0;
+  margin-left: 0;
+  
+  // Desktop: Account for sidebar
+  @media (min-width: 769px) {
+    margin-left: 0; // Main content already has margin-left
+    min-height: 100vh; // Full height on desktop
+    width: 100%; // Full width within main-content area
+  }
+  
+  // Mobile: Account for mobile menu button padding
+  @media (max-width: 768px) {
+    min-height: calc(100vh - 80px); // Account for mobile menu button
+    padding-top: 0; // Remove extra padding since main-content has padding-top
+    width: 100%;
+    margin-left: 0;
+  }
+  
+  // Small mobile: Less height adjustment
+  @media (max-width: 480px) {
+    min-height: calc(100vh - 70px); // Account for smaller mobile menu button
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+.heroContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.heroText {
+  color: white;
+}
+
+.heroTitle {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  word-wrap: break-word;
+  hyphens: auto;
+  
+  .highlight {
+    background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+.heroSubtitle {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  line-height: 1.6;
+  margin-bottom: 40px;
+  opacity: 0.9;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.heroButtons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btnPrimary {
+  width: 100%;
+  background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+  color: white;
+  padding: 16px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+  display: inline-block;
+  text-align: center;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(255, 107, 107, 0.4);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.btnSecondary {
+  background: transparent;
+  color: white;
+  padding: 16px 32px;
+  border: 2px solid white;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  
+  &:hover {
+    background: white;
+    color: #667eea;
+  }
+  
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.heroImage {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+    display: block;
+  }
+}
+
+// Features Section
+.featuresSection {
+  padding: clamp(60px, 8vw, 100px) 0;
+  background: #f8f9fa;
+  width: 100%;
+  margin-left: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: clamp(40px, 6vw, 60px);
+  color: #2c3e50;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+  gap: clamp(20px, 4vw, 40px);
+  width: 100%;
+}
+
+.featureCard {
+  background: white;
+  padding: clamp(24px, 4vw, 40px) clamp(20px, 3vw, 30px);
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+  
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.featureIcon {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: clamp(16px, 3vw, 20px);
+}
+
+.featureCard h3 {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight: 600;
+  margin-bottom: clamp(12px, 2vw, 16px);
+  color: #2c3e50;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.featureCard p {
+  color: #6c757d;
+  line-height: 1.6;
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+// How It Works Section
+.howItWorksSection {
+  padding: clamp(60px, 8vw, 100px) 0;
+  background: white;
+  width: 100%;
+  margin-left: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.stepsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 4vw, 40px);
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 30px);
+  padding: clamp(20px, 3vw, 30px);
+  background: #f8f9fa;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+  
+  &:hover {
+    background: #e9ecef;
+    transform: translateX(10px);
+  }
+}
+
+.stepNumber {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  width: clamp(50px, 8vw, 60px);
+  height: clamp(50px, 8vw, 60px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.stepContent h3 {
+  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+  font-weight: 600;
+  margin-bottom: clamp(6px, 1vw, 8px);
+  color: #2c3e50;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.stepContent p {
+  color: #6c757d;
+  line-height: 1.6;
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+// CTA Section
+.ctaSection {
+  padding: clamp(60px, 8vw, 100px) 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+  width: 100%;
+  margin-left: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.ctaContent h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: clamp(16px, 3vw, 20px);
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.ctaContent p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin-bottom: clamp(30px, 5vw, 40px);
+  opacity: 0.9;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: clamp(16px, 3vw, 20px);
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+// Additional responsive improvements
+@media (max-width: 1200px) {
+  .heroContent {
+    gap: clamp(30px, 5vw, 60px);
+  }
+  
+  .featuresGrid {
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  }
+}
+
+// Mobile Responsive Design
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+  
+  .heroSection {
+    min-height: 100vh;
+    padding: 20px 0;
+    margin-left: 0; // Ensure no margin on mobile
+  }
+  
+  .heroContent {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+    padding: 0 16px;
+  }
+  
+  .heroTitle {
+    font-size: 2.2rem;
+    line-height: 1.3;
+    margin-bottom: 20px;
+  }
+  
+  .heroSubtitle {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    max-width: 100%;
+  }
+  
+  .heroButtons {
+    width: 100%;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+  
+  .btnPrimary {
+    width: 100%;
+    max-width: 280px;
+    padding: 14px 24px;
+    font-size: 1rem;
+  }
+  
+  .heroImage {
+    order: -1;
+    max-width: 280px;
+    margin: 0 auto;
+    
+    img {
+      border-radius: 16px;
+    }
+  }
+  
+  .featuresSection {
+    padding: 60px 0;
+    margin-left: 0; // Ensure no margin on mobile
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .featureCard {
+    padding: 24px 20px;
+    border-radius: 16px;
+  }
+  
+  .featureIcon {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+  }
+  
+  .featureCard h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+  
+  .featureCard p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .howItWorksSection {
+    padding: 60px 0;
+    margin-left: 0; // Ensure no margin on mobile
+  }
+  
+  .stepsContainer {
+    gap: 20px;
+    max-width: 100%;
+  }
+  
+  .step {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+    padding: 20px;
+    border-radius: 16px;
+  }
+  
+  .stepNumber {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+  
+  .stepContent h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+  
+  .stepContent p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .ctaSection {
+    padding: 60px 0;
+  }
+  
+  .ctaContent h2 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+  
+  .ctaContent p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+  
+  .ctaButtons {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+}
+
+// Small Mobile Devices
+@media (max-width: 480px) {
+  .container {
+    padding: 0 12px;
+  }
+  
+  .heroContent {
+    padding: 0 12px;
+  }
+  
+  .heroTitle {
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+  
+  .heroSubtitle {
+    font-size: 0.95rem;
+  }
+  
+  .btnPrimary {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+  
+  .heroImage {
+    max-width: 240px;
+  }
+  
+  .sectionTitle {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+  
+  .featureCard {
+    padding: 20px 16px;
+  }
+  
+  .featureIcon {
+    font-size: 2rem;
+  }
+  
+  .featureCard h3 {
+    font-size: 1.1rem;
+  }
+  
+  .featureCard p {
+    font-size: 0.9rem;
+  }
+  
+  .step {
+    padding: 16px;
+  }
+  
+  .stepNumber {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+  
+  .ctaContent h2 {
+    font-size: 1.8rem;
+  }
+  
+  .ctaContent p {
+    font-size: 0.95rem;
+  }
+}
+
+// Touch-friendly improvements for mobile
+@media (hover: none) and (pointer: coarse) {
+  .btnPrimary,
+  .btnSecondary {
+    min-height: 44px;
+    padding: 12px 24px;
+  }
+  
+  .featureCard {
+    transition: transform 0.2s ease;
+    
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+  
+  .step {
+    transition: transform 0.2s ease;
+    
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+}
+
+// Very Small Screens (320px and below)
+@media (max-width: 320px) {
+  .container {
+    padding: 0 8px;
+  }
+  
+  .heroContent {
+    padding: 0 8px;
+  }
+  
+  .heroTitle {
+    font-size: 1.6rem;
+    line-height: 1.3;
+  }
+  
+  .heroSubtitle {
+    font-size: 0.9rem;
+  }
+  
+  .btnPrimary {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .heroImage {
+    max-width: 200px;
+  }
+  
+  .sectionTitle {
+    font-size: 1.6rem;
+    margin-bottom: 24px;
+  }
+  
+  .featureCard {
+    padding: 16px 12px;
+  }
+  
+  .featureIcon {
+    font-size: 1.8rem;
+  }
+  
+  .featureCard h3 {
+    font-size: 1rem;
+  }
+  
+  .featureCard p {
+    font-size: 0.85rem;
+  }
+  
+  .step {
+    padding: 16px 12px;
+    gap: 12px;
+  }
+  
+  .stepNumber {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  
+  .stepContent h3 {
+    font-size: 1rem;
+  }
+  
+  .stepContent p {
+    font-size: 0.85rem;
+  }
+  
+  .ctaContent h2 {
+    font-size: 1.6rem;
+  }
+  
+  .ctaContent p {
+    font-size: 0.9rem;
+  }
+}
+
+
